@@ -1,9 +1,6 @@
 const express = require("express");
 const Feature = require("../models/Feature");
-
 const router = express.Router();
-
-// ✅ GET all features
 router.get("/", async (req, res) => {
   try {
     const features = await Feature.find();
@@ -12,8 +9,6 @@ router.get("/", async (req, res) => {
     res.status(500).json({ message: "Error fetching features", error });
   }
 });
-
-// ✅ POST - Add new feature
 router.post("/", async (req, res) => {
   console.log("📥 Received POST:", req.body); // 👀 Add this
   try {
@@ -25,11 +20,7 @@ router.post("/", async (req, res) => {
   } catch (error) {
     console.error("❌ Error creating feature:", error);
     res.status(400).json({ message: "Error creating feature", error });
-  }
-});
-
-
-// ✅ PUT - Update feature (by ID)
+  }});
 router.put("/:id", async (req, res) => {
   try {
     const updatedFeature = await Feature.findByIdAndUpdate(
@@ -42,8 +33,6 @@ router.put("/:id", async (req, res) => {
     res.status(400).json({ message: "Error updating feature", error });
   }
 });
-
-// ✅ DELETE - Remove feature (by ID)
 router.delete("/:id", async (req, res) => {
   try {
     await Feature.findByIdAndDelete(req.params.id);
@@ -52,5 +41,4 @@ router.delete("/:id", async (req, res) => {
     res.status(500).json({ message: "Error deleting feature", error });
   }
 });
-
 module.exports = router;

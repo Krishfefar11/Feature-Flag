@@ -3,6 +3,7 @@ const mongoose = require("mongoose");
 const cors = require("cors");
 const dotenv = require("dotenv");
 const featureRoutes = require("./routes/featureRoutes");
+const authRoutes = require("./routes/authRoutes"); // 🆕 added
 
 // Load environment variables
 dotenv.config();
@@ -28,6 +29,7 @@ app.get("/", (req, res) => {
 
 // API Routes
 app.use("/api/features", featureRoutes);
+app.use("/api", authRoutes); // 🆕 Mount authentication routes
 
 // Final port setup
 const PORT = process.env.PORT || 5001;
@@ -37,3 +39,7 @@ console.log("🧠 Final Port Variable:", PORT);
 app.listen(PORT, "0.0.0.0", () => {
   console.log(`🚀 Server running on port ${PORT}`);
 });
+
+app.use("/api/auth", require("./routes/authRoutes"));
+app.use("/api/users", require("./routes/userRoutes"));
+app.use("/api/audit", require("./routes/authRoutes"));
