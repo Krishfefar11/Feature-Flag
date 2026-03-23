@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Demo Store — A showcase of feature flag integration for dynamic feature management." />
+  <title>Demo Store — Feature Flag Demo</title>
+  <link rel="stylesheet" href="/style.css" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🛍️</text></svg>" />
+</head>
+<body>
+
+  <!-- ===== NAVBAR ===== -->
+  <nav class="navbar" id="navbar">
+    <span class="navbar-brand">🛍️ DemoStore</span>
+    <span class="navbar-badge">
+      <span class="dot"></span>
+      Feature Flags Active
+    </span>
+  </nav>
+
+  <!-- ===== FLAG STATUS PANEL ===== -->
+  <aside class="flag-panel" id="flag-panel">
+    <h3>🚩 Flag Status</h3>
+    <div class="flag-item">
+      <span class="flag-name">promo-banner</span>
+      <span class="flag-status loading" id="flag-promo-banner">⏳ …</span>
+    </div>
+    <div class="flag-item">
+      <span class="flag-name">new-arrivals</span>
+      <span class="flag-status loading" id="flag-new-arrivals">⏳ …</span>
+    </div>
+    <div class="flag-item">
+      <span class="flag-name">dark-mode</span>
+      <span class="flag-status loading" id="flag-dark-mode">⏳ …</span>
+    </div>
+  </aside>
+
+  <!-- ===== HERO ===== -->
+  <section class="hero" id="hero">
+    <p class="hero-subtitle">Feature Flag Powered</p>
+    <h1>Shop Smarter with <span class="gradient-text">Dynamic Features</span></h1>
+    <p class="hero-description">
+      This demo store dynamically toggles its UI based on feature flags from the
+      Feature Flag Console. Toggle flags in the dashboard and refresh to see changes.
+    </p>
+
+    <!-- Promo Banner — controlled by "promo-banner" flag -->
+    <div class="promo-banner" id="promo-banner">
+      <span class="promo-icon">🎉</span>
+      <span class="promo-text">Spring Sale! Use code</span>
+      <span class="promo-code">SPRING30</span>
+      <span class="promo-text">for 30% off</span>
+    </div>
+
+    <a href="#products" class="btn-cta">Browse Products ↓</a>
+  </section>
+
+  <!-- ===== PRODUCTS ===== -->
+  <section class="products-section" id="products">
+    <div class="section-header">
+      <h2>Featured Products</h2>
+      <p>Hand-picked items from our collection</p>
+    </div>
+
+    <div class="products-grid">
+      <!-- Product 1 -->
+      <div class="product-card">
+        <span class="new-badge" data-new-badge>✨ New</span>
+        <div class="product-image">⌚</div>
+        <div class="product-info">
+          <h3>Chrono Eclipse Watch</h3>
+          <span class="price">$249</span>
+          <span class="price-old">$349</span>
+        </div>
+      </div>
+
+      <!-- Product 2 -->
+      <div class="product-card">
+        <span class="new-badge" data-new-badge>✨ New</span>
+        <div class="product-image">🎧</div>
+        <div class="product-info">
+          <h3>Nova Pro Headphones</h3>
+          <span class="price">$179</span>
+          <span class="price-old">$229</span>
+        </div>
+      </div>
+
+      <!-- Product 3 -->
+      <div class="product-card">
+        <span class="new-badge" data-new-badge>✨ New</span>
+        <div class="product-image">👟</div>
+        <div class="product-info">
+          <h3>Aero Runner X</h3>
+          <span class="price">$129</span>
+          <span class="price-old">$169</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== DARK MODE SECTION — controlled by "dark-mode" flag ===== -->
+  <section class="dark-mode-section" id="dark-mode-section">
+    <div class="toggle-icon">🌙</div>
+    <h3>Dark Mode is Active</h3>
+    <p>This section is only visible because the <strong>dark-mode</strong> feature flag is ON.</p>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <p>DemoStore © 2026 — Powered by <a href="#">Feature Flag Console</a></p>
+  </footer>
+
+  <script src="/app.js"></script>
+</body>
+</html>

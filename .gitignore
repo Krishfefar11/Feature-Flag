@@ -1,0 +1,27 @@
+# Dependency directories
+node_modules/
+backend/node_modules/
+feature-flag-dashboard/node_modules/
+demo-app/node_modules/
+
+# Logs
+*.log
+backend.log
+frontend.log
+demo.log
+
+# Environment variables
+.env
+backend/utils/.env
+feature-flag-dashboard/.env
+demo-app/.env
+
+# IDE and System files
+.vscode/
+.idea/
+.DS_Store
+*.swp
+
+# Build files
+dist/
+build/

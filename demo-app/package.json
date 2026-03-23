@@ -1,0 +1,13 @@
+{
+  "name": "demo-store",
+  "version": "1.0.0",
+  "description": "A demo store app that consumes feature flags from Feature Flag Console",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
